@@ -72,13 +72,16 @@ public class Main extends JFrame {
 	//  Класс выполняющий расчет
 	class calc implements ActionListener{	
 		public void actionPerformed(ActionEvent e) {
-			double value = (Integer.parseInt(text.getText())/Integer.parseInt(text2.getText()));
+			double value = calculation(Double.parseDouble(text.getText()),Double.parseDouble(text2.getText()));
 			lboutput.setText("Сила тока I = "+value+"А");	
 		}}
 	class carlink implements ActionListener{	
 		public void actionPerformed(ActionEvent e) {
 			new car();
 		}}
+	// Метод расчитывающий номинал
+    public static double calculation(Double text, Double text2) {
+    	double value = text/text2; return value;}
 
 	// запуск программы с авторизации
 	public static void main(String[] args) {
